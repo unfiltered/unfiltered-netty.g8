@@ -6,7 +6,7 @@ import unfiltered.response._
 import org.clapper.avsl.Logger
 
 /** unfiltered plan */
-class App extends unfiltered.netty.Plan {
+class App extends unfiltered.netty.roundtrip.Plan {
   import QParams._
   
   val logger = Logger(classOf[App])
@@ -56,7 +56,6 @@ object Server {
   
   def main(args: Array[String]) {
     logger.info("starting unfiltered app at localhost on port %s" format 8080)
-    val server = new unfiltered.netty.Server(8080, new App)
-    server.start
+    unfiltered.netty.Server(8080, new App).run
   }
 }
