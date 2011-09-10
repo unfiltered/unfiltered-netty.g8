@@ -3,8 +3,6 @@ package com.example
 import unfiltered.request._
 import unfiltered.response._
 
-import org.clapper.avsl.Logger
-
 import unfiltered.netty._
 
 /** unfiltered plan */
@@ -12,7 +10,7 @@ object Palindrome extends cycle.Plan
   with cycle.SynchronousExecution with ServerErrorResponse {
   import QParams._
   
-  val logger = Logger(getClass)
+  val logger = org.clapper.avsl.Logger(getClass)
   
   def intent = {
     case GET(Path(p)) => 
@@ -50,15 +48,5 @@ object Palindrome extends cycle.Plan
        </form>
      </body></html>
    )
-  }
-}
-
-/** embedded server */
-object Server {
-  val logger = Logger(Server.getClass)
-  
-  def main(args: Array[String]) {
-    logger.info("starting unfiltered app at localhost on port %s" format 8080)
-    unfiltered.netty.Http(8080).handler(Palindrome).run
   }
 }
