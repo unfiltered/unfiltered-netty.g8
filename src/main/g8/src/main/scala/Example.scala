@@ -5,11 +5,14 @@ import unfiltered.response._
 
 import org.clapper.avsl.Logger
 
+import unfiltered.netty._
+
 /** unfiltered plan */
-class App extends unfiltered.netty.cycle.Plan {
+object Palindrome extends cycle.Plan
+  with cycle.SynchronousExecution with ServerErrorResponse {
   import QParams._
   
-  val logger = Logger(classOf[App])
+  val logger = Logger(getClass)
   
   def intent = {
     case GET(Path(p)) => 
@@ -56,6 +59,6 @@ object Server {
   
   def main(args: Array[String]) {
     logger.info("starting unfiltered app at localhost on port %s" format 8080)
-    unfiltered.netty.Http(8080).handler(new App).run
+    unfiltered.netty.Http(8080).handler(Palindrome).run
   }
 }

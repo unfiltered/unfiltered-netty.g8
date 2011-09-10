@@ -5,7 +5,7 @@ name := "$name$"
 version := "$version$"
 
 libraryDependencies ++= Seq(
-   "net.databinder" %% "unfiltered-netty" % "$unfiltered_version$",
+   "net.databinder" %% "unfiltered-netty-server" % "$unfiltered_version$",
    "org.clapper" %% "avsl" % "0.3.1"
 )
 
