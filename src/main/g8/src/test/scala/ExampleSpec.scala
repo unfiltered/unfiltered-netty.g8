@@ -8,7 +8,7 @@ object ExampleSpec extends Specification with unfiltered.spec.netty.Served {
   
   import dispatch._
   
-  def setup = { unfiltered.netty.Http(_).handler(new App) }
+  def setup = { _.handler(Palindrome) }
   
   "The example app" should {
     "serve unfiltered text" in {
