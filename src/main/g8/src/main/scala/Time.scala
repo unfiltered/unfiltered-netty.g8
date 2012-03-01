@@ -18,10 +18,12 @@ object Time extends async.Plan
       import dispatch._
       // the call below is non-blocking, so we return quickly
       // and free netty's worker thread
-      Server.http(:/("127.0.0.1", 8080).POST / "time" >- { time =>
+      for {
+        time <- Http(host("127.0.0.1", 8080).POST / "time" > As.string)
+      } {
         // later, we respond to the request
         req.respond(view(time))
-      })
+      }
     case req @ POST(Path("/time")) =>
       logger.debug("POST /time")
       // since we don't have to do any blocking IO for this request
