@@ -15,11 +15,11 @@ object Time extends async.Plan
   def intent = {
     case req @ GET(Path("/time")) => 
       logger.debug("GET /time")
-      import dispatch._
+      import dispatch._, Defaults._
       // the call below is non-blocking, so we return quickly
       // and free netty's worker thread
       for {
-        time <- Http(host("127.0.0.1", 8080).POST / "time" > As.string)
+        time <- Http(host("127.0.0.1", 8080).POST / "time" > as.String)
       } {
         // later, we respond to the request
         req.respond(view(time))
