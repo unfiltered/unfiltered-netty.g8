@@ -4,7 +4,7 @@ name := "$name$"
 
 version := "$version$"
 
-scalaVersion := "$scalaVersion$"
+scalaVersion := "$scala-version$"
 
 libraryDependencies ++= Seq(
    "net.databinder" %% "unfiltered-netty-server" % "$unfiltered_version$",
