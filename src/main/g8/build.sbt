@@ -8,9 +8,9 @@ scalaVersion := "$scala_version$"
 
 libraryDependencies ++= Seq(
    "net.databinder" %% "unfiltered-netty-server" % "$unfiltered_version$",
-   "net.databinder.dispatch" %% "dispatch-core" % "0.11.0",
+   "net.databinder.dispatch" %% "dispatch-core" % "0.11.1",
    "org.clapper" %% "avsl" % "1.0.1",
-   "net.databinder" %% "unfiltered-spec" % "$unfiltered_version$" % "test"
+   "net.databinder" %% "unfiltered-specs2" % "$unfiltered_version$" % "test"
 )
 
 resolvers ++= Seq(
