@@ -10,6 +10,7 @@ import scala.concurrent.{ExecutionContext,Future}
 /** Asynchronous plan that gets the time in a ridiculous fashion.
  *  (But imagine that it's using a vital external HTTP service to
  *  inform its response--this is a fine way to do that.) */
+@io.netty.channel.ChannelHandler.Sharable
 object Time extends future.Plan
   with ServerErrorResponse {
   val logger = org.clapper.avsl.Logger(getClass)

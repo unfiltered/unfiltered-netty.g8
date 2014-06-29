@@ -6,6 +6,7 @@ import unfiltered.response._
 import unfiltered.netty._
 
 /** unfiltered plan */
+@io.netty.channel.ChannelHandler.Sharable
 object Palindrome extends cycle.Plan
   with cycle.SynchronousExecution with ServerErrorResponse {
   import QParams._
