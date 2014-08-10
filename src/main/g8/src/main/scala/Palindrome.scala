@@ -11,14 +11,10 @@ object Palindrome extends cycle.Plan
   with cycle.SynchronousExecution with ServerErrorResponse {
   import QParams._
   
-  val logger = org.clapper.avsl.Logger(getClass)
-  
   def intent = {
     case GET(Path("/")) => 
-      logger.debug("GET /")
       view(Map.empty)(<p> What say you? </p>)
     case POST(Path("/") & Params(params)) =>
-      logger.debug("POST /")
       val vw = view(params)_
       val expected = for { 
         int <- lookup("int") is

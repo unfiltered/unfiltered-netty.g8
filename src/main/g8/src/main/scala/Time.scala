@@ -13,13 +13,10 @@ import scala.concurrent.{ExecutionContext,Future}
 @io.netty.channel.ChannelHandler.Sharable
 object Time extends future.Plan
   with ServerErrorResponse {
-  val logger = org.clapper.avsl.Logger(getClass)
-
   implicit def executionContext = ExecutionContext.Implicits.global
   
   def intent = {
     case req @ GET(Path("/time")) => 
-      logger.debug("GET /time")
       import dispatch._
       // the call below is non-blocking, so we return quickly
       // and free netty's worker thread
@@ -30,7 +27,6 @@ object Time extends future.Plan
         view(time)
       }
     case req @ POST(Path("/time")) =>
-      logger.debug("POST /time")
       // since we don't have to do any blocking IO for this request
       // we can respond immediately
       Future.successful(ResponseString(new java.util.Date().toString))
