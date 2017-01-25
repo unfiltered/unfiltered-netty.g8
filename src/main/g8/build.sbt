@@ -25,7 +25,7 @@ scalaVersion := "$scala_version$"
 val unfilteredVersion = "$unfiltered_version$"
 
 libraryDependencies ++= Seq(
-   "net.databinder" %% "unfiltered-netty-server" % unfilteredVersion,
+   "ws.unfiltered" %% "unfiltered-netty-server" % unfilteredVersion,
    "net.databinder.dispatch" %% "dispatch-core" % "$dispatch_version$",
-   "net.databinder" %% "unfiltered-specs2" % unfilteredVersion % "test"
+   "ws.unfiltered" %% "unfiltered-specs2" % unfilteredVersion % "test"
 )
