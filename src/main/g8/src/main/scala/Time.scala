@@ -21,7 +21,7 @@ object Time extends future.Plan
       // the call below is non-blocking, so we return quickly
       // and free netty's worker thread
       for {
-        time <- Http(host("127.0.0.1", 8080).POST / "time" > as.String)
+        time <- Http.default(host("127.0.0.1", 8080).POST / "time" > as.String)
       } yield {
         // in a future, we respond to the request
         view(time)

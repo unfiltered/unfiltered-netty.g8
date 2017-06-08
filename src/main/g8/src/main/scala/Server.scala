@@ -9,6 +9,6 @@ object Server {
       .run { s =>
         unfiltered.util.Browser.open(s.portBindings.head.url + "/time")
       }
-    dispatch.Http.shutdown()
+    dispatch.Http.default.shutdown()
   }
 }
