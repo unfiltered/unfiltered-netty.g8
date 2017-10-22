@@ -4,7 +4,7 @@ script:
   - sbt ";set g8Properties in g8 in Test ~= { _ ++ Map((\"scala_version\" -> \"$TRAVIS_SCALA_VERSION\"), (\"sbt_version\" -> \"$SBT_VERSION\")) }; g8Test"
 matrix:
   include:
-  - jdk: oraclejdk7
+  - jdk: openjdk7
     scala: 2.11.11
     env: SBT_VERSION="0.13.16"
   - jdk: oraclejdk8
