@@ -6,13 +6,13 @@ matrix:
   include:
   - jdk: openjdk7
     scala: 2.11.12
-    env: SBT_VERSION="0.13.16"
+    env: SBT_VERSION="0.13.17"
   - jdk: oraclejdk8
     scala: 2.11.12
     env: SBT_VERSION="1.1.0"
   - jdk: oraclejdk8
     scala: 2.12.4
-    env: SBT_VERSION="0.13.16"
+    env: SBT_VERSION="0.13.17"
   - jdk: oraclejdk8
     scala: 2.12.4
     env: SBT_VERSION="1.1.0"
