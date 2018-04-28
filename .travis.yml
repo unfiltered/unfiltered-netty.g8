@@ -11,10 +11,10 @@ matrix:
     scala: 2.11.12
     env: SBT_VERSION="1.1.1"
   - jdk: oraclejdk8
-    scala: 2.12.4
+    scala: 2.12.6
     env: SBT_VERSION="0.13.17"
   - jdk: oraclejdk8
-    scala: 2.12.4
+    scala: 2.12.6
     env: SBT_VERSION="1.1.1"
 addons:
   apt:
