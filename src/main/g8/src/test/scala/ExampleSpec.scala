@@ -14,8 +14,12 @@ object ExampleSpec extends Specification with unfiltered.specs2.netty.Served {
     "serve unfiltered text" in {
       val request = new Request.Builder().url(host).build()
       val response = http.newCall(request).execute()
-      response.code must_== 200
-      response.body.string must contain("What say you")
+      try {
+        response.code must_== 200
+        response.body.string must contain("What say you")
+      } finally {
+        response.close()
+      }
     }
   }
 }
