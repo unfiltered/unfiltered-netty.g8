@@ -25,6 +25,5 @@ val unfilteredVersion = "$unfiltered_version$"
 
 libraryDependencies ++= Seq(
    "ws.unfiltered" %% "unfiltered-netty-server" % unfilteredVersion,
-   "net.databinder.dispatch" %% "dispatch-core" % "$dispatch_version$",
    "ws.unfiltered" %% "unfiltered-specs2" % unfilteredVersion % "test"
 )
