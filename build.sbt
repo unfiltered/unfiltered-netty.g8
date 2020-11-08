@@ -3,7 +3,7 @@ import java.lang.management.ManagementFactory
 
 enablePlugins(ScriptedPlugin)
 
-resolvers += Resolver.url("typesafe", url("http://repo.typesafe.com/typesafe/ivy-releases/"))(Resolver.ivyStylePatterns)
+resolvers += Resolver.url("typesafe", url("https://repo.typesafe.com/typesafe/ivy-releases/"))(Resolver.ivyStylePatterns)
 
 scriptedBufferLog := false
 
