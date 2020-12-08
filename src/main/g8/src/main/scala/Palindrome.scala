@@ -33,7 +33,7 @@ object Palindrome extends cycle.Plan
       }
   }
   def palindrome(s: String) = s.toLowerCase.reverse == s.toLowerCase
-  def view(params: Map[String, Seq[String]])(body: scala.xml.NodeSeq) = {
+  def view(params: collection.Map[String, Seq[String]])(body: scala.xml.NodeSeq) = {
     def p(k: String) = params.get(k).flatMap { _.headOption } getOrElse("")
     Html(
      <html><body>
