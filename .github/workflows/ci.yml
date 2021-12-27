@@ -11,8 +11,8 @@ jobs:
     strategy:
       matrix:
         include:
+          - scala: 2.12.5
           - scala: 2.13.7
-          - scala: 2.13.6
     steps:
     - uses: olafurpg/setup-scala@v13
       with:
