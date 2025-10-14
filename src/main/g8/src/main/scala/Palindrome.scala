@@ -18,13 +18,13 @@ object Palindrome extends cycle.Plan
       val vw = view(params)_
       val expected = for { 
         int <- lookup("int") is
-          int { s => "'%s' is not an integer".format(s) } is
+          int { s => s"'${s}' is not an integer" } is
           required("missing int")
         word <- lookup("palindrome") is
           trimmed is 
           nonempty("Palindrome is empty") is
           pred(palindrome, { s =>
-            "%s is not a palindrome".format(s)
+            s"${s} is not a palindrome"
           }) is
           required("missing palindrome")
       } yield vw(<p>Yup. { int.get } is an integer and { word.get } is a palindrome. </p>)
